@@ -39,7 +39,7 @@ minetest.register_abm({
 			--end
 			if minetest.get_node(seedling).name == "air" then
 				minetest.set_node(seedling, {name="mtz_flora:mycena"})
-				print("mycena spawned at ".. minetest.pos_to_string(pos))
+				-- print("mycena spawned at ".. minetest.pos_to_string(pos))
 			end
 		end
 	end,
