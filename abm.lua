@@ -1,7 +1,7 @@
 minetest.register_abm({
     nodenames = {"default:dirt", "default:dirt_with_grass"},
     interval = 240,
-    chance = 100,
+    chance = 80,
     action = function(pos, node)
         local destnode = { x = pos.x, y = pos.y+1, z = pos.z}
         local name = minetest.get_node(destnode).name       
@@ -15,7 +15,7 @@ minetest.register_abm({
         local pos1 = { x = destnode.x+4, y = destnode.y+4, z = destnode.z+4 }
 
         local mushcount = minetest.find_nodes_in_area(pos0, pos1, "mtz_flora:mycena")
-        local maxmushrooms = math.random(1, 3)
+        local maxmushrooms = math.random(1, 5)
         if #mushcount > maxmushrooms then
             return
         end
@@ -23,7 +23,7 @@ minetest.register_abm({
         if minetest.find_node_near(destnode, 3, "default:jungletree") then
             if name == "air" then
                 minetest.set_node(destnode, {name = "mtz_flora:mycena"})
-                -- print("Mycena spawned at ".. minetest.pos_to_string(pos))
+                print("Mycena spawned at ".. minetest.pos_to_string(pos))
             end
         end
     end
