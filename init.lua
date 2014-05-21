@@ -12,7 +12,8 @@ minetest.register_node("mtz_flora:mycena", {
 	paramtype = "light",
 	walkable = false,
 	buildable_to = true,
-	groups = {snappy=3,flammable=0,flower=1,flora=1,attached_node=1,color_green=1},
+	groups = {snappy=3, flammable=0, flower=0, 
+		  flora=1, attached_node=1, color_green=1},
 	sounds = default.node_sound_leaves_defaults(),
 	light_source = 4,
 	selection_box = {
