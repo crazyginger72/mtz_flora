@@ -1,7 +1,7 @@
 minetest.register_abm({
     nodenames = {"default:dirt", "default:dirt_with_grass"},
-    interval = 240,
-    chance = 80,
+    interval = 480,
+    chance = 160,
     action = function(pos, node)
         local destnode = { x = pos.x, y = pos.y+1, z = pos.z}
         local name = minetest.get_node(destnode).name       
@@ -31,8 +31,8 @@ minetest.register_abm({
 
 minetest.register_abm({
     nodenames = {"default:sand"},
-    interval = 300,
-    chance = 300,
+    interval = 800,
+    chance = 1800,
     action = function(pos, node)
         local name = minetest.get_node(pos).name       
         local nodedef = minetest.registered_nodes[name]
