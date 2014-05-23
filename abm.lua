@@ -23,7 +23,7 @@ minetest.register_abm({
         if minetest.find_node_near(destnode, 3, "default:jungletree") then
             if name == "air" then
                 minetest.set_node(destnode, {name = "mtz_flora:mycena"})
-                print("Mycena spawned at ".. minetest.pos_to_string(pos))
+                -- print("Mycena spawned at ".. minetest.pos_to_string(pos))
             end
         end
     end
