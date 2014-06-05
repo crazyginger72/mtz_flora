@@ -1,7 +1,13 @@
+local mycena_interval     = 60*60
+local mycena_chance       = 120
+
+local lumsand_interval    = 60*60*2
+local lumsand_chance      = 1000
+
 minetest.register_abm({
     nodenames = {"default:dirt", "default:dirt_with_grass"},
-    interval = 60*60*2,
-    chance = 160,
+    interval = mycena_interval,
+    chance = mycena_chance,
     action = function(pos, node)
         local destnode = { x = pos.x, y = pos.y+1, z = pos.z}
         local name = minetest.get_node(destnode).name       
@@ -31,8 +37,8 @@ minetest.register_abm({
 
 minetest.register_abm({
     nodenames = {"default:sand"},
-    interval = 60*60*4,
-    chance = 1800,
+    interval = lumsand_interval,
+    chance =  lumsand_chance,
     action = function(pos, node)
         local name = minetest.get_node(pos).name       
         local nodedef = minetest.registered_nodes[name]
